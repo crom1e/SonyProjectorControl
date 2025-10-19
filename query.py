@@ -52,7 +52,7 @@ def normalize_status(s: str | None) -> str:
     if s is None:
         return "UNKNOWN"
     up = s.strip().upper()
-    if up == "ON":
+    if up in ("ON", "STARTUP", "STARTUP1", "STARTUP2", "POWER ON"):
         return "ON"
     if up in ("OFF", "STANDBY"):
         return "OFF"
